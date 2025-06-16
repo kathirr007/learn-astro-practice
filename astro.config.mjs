@@ -10,6 +10,8 @@ import {
 } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 
+import vercel from '@astrojs/vercel';
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -47,4 +49,6 @@ export default defineConfig({
       }),
     ],
   },
+
+  adapter: vercel(),
 })

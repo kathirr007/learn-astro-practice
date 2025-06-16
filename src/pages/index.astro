@@ -1,6 +1,7 @@
 ---
+import type { Pricing } from '@/types/index.type'
 import cards from '@/data/cardData.json'
-import PButton from '@/components/vue/PButton.vue'
+import PricingCard from '@/components/vue/PricingCard.vue'
 ---
 
 <html lang="en">
@@ -11,8 +12,14 @@ import PButton from '@/components/vue/PButton.vue'
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class="flex items-center justify-center p-4">
     <!-- Place pricing section here -->
-    <PButton client:visible />
+    <section aria-label="Pricing" class="flex gap-3">
+      {
+        cards.map((cardItem: Pricing) => {
+          return <PricingCard pricingDetails={cardItem} client:visible />
+        })
+      }
+    </section>
   </body>
 </html>

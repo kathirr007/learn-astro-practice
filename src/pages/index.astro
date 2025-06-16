@@ -1,5 +1,8 @@
 ---
+import "@/styles/global.css";
+
 import cards from "@/data/cardData.json";
+import PButton from '@/components/vue/PButton.vue'
 ---
 
 <html lang="en">
@@ -12,5 +15,6 @@ import cards from "@/data/cardData.json";
   </head>
   <body>
     <!-- Place pricing section here -->
+     <PButton client:visible />
   </body>
 </html>

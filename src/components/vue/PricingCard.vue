@@ -16,11 +16,11 @@ defineProps<{
       </div>
     </template>
     <template #content>
-      <p v-if="pricingDetails.most_popular">
-        Most Popular
-      </p>
+      <div v-if="pricingDetails.most_popular" class="text-center">
+        <Tag severity="contrast" value="Most Popular" />
+      </div>
       <div>
-        <div>
+        <div class="font-medium text-md">
           <span>$</span>
           <span>{{ pricingDetails.amount_per_month }}</span>
           <span v-if="pricingDetails.amount_per_month > 0">/mo</span>

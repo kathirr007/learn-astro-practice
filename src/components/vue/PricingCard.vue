@@ -33,7 +33,7 @@ defineProps<{
       <div class="flex flex-col gap-1.5 mt-3">
         <div v-for="item in pricingDetails.features" :key="item.title" class="flex gap-2 items-center">
           <!-- icon -->
-          <iconify-icon :class="item.checked ? 'text-green-400' : 'text-red-500'" :icon="item.checked ? 'mdi:checkbox-marked-circle-outline' : 'mdi:cross-circle-outline'" width="32" height="32" />
+          <iconify-icon :class="item.checked ? 'text-green-400' : 'text-red-500'" :icon="item.checked ? 'mdi:checkbox-marked-circle-outline' : 'mdi:cross-circle-outline'" width="24" height="24" />
           <!-- text -->
           <p>{{ item.title }}</p>
         </div>

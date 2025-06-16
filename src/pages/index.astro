@@ -1,21 +1,16 @@
 ---
-import data from "@/data/data.json";
-import Card from "@/components/Card.astro";
+import cards from "@/data/cardData.json";
 ---
 
-<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My Astro Site</title>
-	<link rel="icon" type="image/x-icon" href="/favicon.svg">
-</head>
-<body>
-	<main>
-		{data.map((cardItem:any) => (
-			<Card key={cardItem.id} data={cardItem} />
-		))}
-	</main>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <!-- Place pricing section here -->
+  </body>
 </html>

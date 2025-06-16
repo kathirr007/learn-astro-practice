@@ -1,19 +1,15 @@
 ---
-import Avatar from "./Avatar.astro";
+import Avatar from './Avatar.astro'
 
-const { data } = Astro.props;
+const { data } = Astro.props
 ---
 
 <article>
-    <img src={data.hero} alt={data.title} />
-    <div class="content">
-        <p class="badge">{data.category}</p>
-        <p class="title">{data.title}</p>
-        <p class="description">{data.description}</p>
-        <Avatar
-            name={data.author.name}
-            avatar={data.author.avatar}
-            time={data.time}
-        />
-    </div>
+  <img src={data.hero} alt={data.title} />
+  <div class="content">
+    <p class="badge">{data.category}</p>
+    <p class="title">{data.title}</p>
+    <p class="description">{data.description}</p>
+    <Avatar name={data.author.name} avatar={data.author.avatar} time={data.time} />
+  </div>
 </article>

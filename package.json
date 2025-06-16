@@ -9,13 +9,22 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^4.3.0",
     "@astrojs/vue": "^5.1.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.2.6",
+    "@mui/material": "^7.1.1",
     "@primeuix/themes": "^1.1.1",
     "@tailwindcss/vite": "^4.1.10",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "astro": "^5.9.3",
     "iconify-icon": "^3.0.0",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.10",
     "vue": "^3.5.16"
   },
@@ -35,5 +44,9 @@
     "sass": "^1.89.2",
     "unplugin-auto-import": "^19.3.0",
     "unplugin-vue-components": "^28.7.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
   }
 }

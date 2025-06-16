@@ -1,1 +1,7 @@
 // Custom styles goes here
+// To avoid layout shift while using iconify-icon web component
+iconify-icon {
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+}

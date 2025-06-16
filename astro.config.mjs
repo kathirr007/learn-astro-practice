@@ -1,3 +1,4 @@
+import react from '@astrojs/react'
 import vue from '@astrojs/vue'
 import { PrimeVueResolver } from '@primevue/auto-import-resolver'
 import tailwindcss from '@tailwindcss/vite'
@@ -24,6 +25,10 @@ export default defineConfig({
         },
       },
       devtools: true,
+    }),
+    react({
+      experimentalReactChildren: true,
+      include: ['**/react/*'],
     }),
   ],
 

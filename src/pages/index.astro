@@ -2,6 +2,8 @@
 import type { Pricing } from '@/types/index.type'
 import cards from '@/data/cardData.json'
 import PricingCard from '@/components/vue/PricingCard.vue'
+import ComboBox from '@/components/react/ComboBox'
+import RangeSlider from '@/components/react/RangeSlider'
 ---
 
 <html lang="en">
@@ -12,14 +14,26 @@ import PricingCard from '@/components/vue/PricingCard.vue'
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="flex items-center justify-center p-4">
+  <body class="">
     <!-- Place pricing section here -->
-    <section aria-label="Pricing" class="flex gap-3">
-      {
-        cards.map((cardItem: Pricing) => {
-          return <PricingCard pricingDetails={cardItem} client:visible />
-        })
-      }
+    <section aria-label="Pricing" class="p-4">
+      <h3 class="text-center text-2xl font-medium">Vue Example</h3>
+      <div class="flex gap-3 items-center justify-center p-4">
+        {
+          cards.map((cardItem: Pricing) => {
+            return <PricingCard pricingDetails={cardItem} client:visible />
+          })
+        }
+      </div>
+    </section>
+    <section class="p-4">
+      <h3 class="text-center text-2xl font-medium my-4">React Example</h3>
+
+      <div class="components-container flex gap-3">
+        <ComboBox client:only="react" />
+        <RangeSlider client:visible />
+        <ComboBox client:visible />
+      </div>
     </section>
   </body>
 </html>

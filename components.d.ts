@@ -11,5 +11,6 @@ declare module 'vue' {
     Card: typeof import('primevue/card')['default']
     Tag: typeof import('primevue/tag')['default']
     VuePricingCard: typeof import('./src/components/vue/PricingCard.vue')['default']
+    VueRouting: typeof import('./src/components/vue/Routing.vue')['default']
   }
 }

@@ -4,35 +4,29 @@ import cards from '@/data/cardData.json'
 import PricingCard from '@/components/vue/PricingCard.vue'
 import ComboBox from '@/components/react/ComboBox'
 import RangeSlider from '@/components/react/RangeSlider'
+import DefaultLayout from '@/layouts/DefaultLayout.astro'
+import Routing from '@/components/vue/Routing.vue'
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body class="">
-    <!-- Place pricing section here -->
-    <section aria-label="Pricing" class="p-4">
-      <h3 class="text-center text-2xl font-medium">Vue Example</h3>
-      <div class="flex gap-3 items-center justify-center p-4">
-        {
-          cards.map((cardItem: Pricing) => {
-            return <PricingCard pricingDetails={cardItem} client:visible />
-          })
-        }
-      </div>
-    </section>
-    <section class="p-4">
-      <h3 class="text-center text-2xl font-medium my-4">React Example</h3>
+<DefaultLayout title="Home" description="Home page sample description">
+  <!-- Place pricing section here -->
+  <section aria-label="Pricing" class="p-4">
+    <h3 class="text-center text-2xl font-medium">Vue Example</h3>
+    <div class="flex gap-3 items-center justify-center p-4">
+      {
+        cards.map((cardItem: Pricing) => {
+          return <PricingCard pricingDetails={cardItem} client:visible />
+        })
+      }
+    </div>
+  </section>
+  <section class="p-4">
+    <h3 class="text-center text-2xl font-medium my-4">React Example</h3>
 
-      <div class="components-container flex gap-3">
-        <RangeSlider client:visible />
-        <ComboBox client:visible />
-      </div>
-    </section>
-  </body>
-</html>
+    <div class="components-container flex gap-3">
+      <RangeSlider client:visible />
+      <ComboBox client:visible />
+    </div>
+  </section>
+  <Routing client:visible />
+</DefaultLayout>

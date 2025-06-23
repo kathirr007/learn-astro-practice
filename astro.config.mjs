@@ -12,27 +12,25 @@ import Components from 'unplugin-vue-components/vite'
 
 import vercel from '@astrojs/vercel';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    AutoImport({
-      resolvers: [PrimeVueResolver()],
-    }),
-    vue({
-      appEntrypoint: '/src/pages/_vueApp',
-      template: {
-        compilerOptions: {
-          // treat any tag that includes with iconify-icon as custom elements
-          isCustomElement: tag => tag.includes('iconify-icon'),
-        },
+  integrations: [AutoImport({
+    resolvers: [PrimeVueResolver()],
+  }), vue({
+    appEntrypoint: '/src/pages/_vueApp',
+    template: {
+      compilerOptions: {
+        // treat any tag that includes with iconify-icon as custom elements
+        isCustomElement: tag => tag.includes('iconify-icon'),
       },
-      devtools: true,
-    }),
-    react({
-      experimentalReactChildren: true,
-      include: ['**/react/*'],
-    }),
-  ],
+    },
+    devtools: true,
+  }), react({
+    experimentalReactChildren: true,
+    include: ['**/react/*'],
+  }), mdx()],
 
   vite: {
     plugins: [

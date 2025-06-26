@@ -1,0 +1,25 @@
+---
+import Hero, { type Link } from '@/components/Hero.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+
+const links = [
+  {
+    href: '/katie-haus-cv.pdf',
+    name: 'Download CV',
+    variant: 'secondary',
+  },
+  {
+    href: '/',
+    name: 'Go Home',
+    variant: 'primary',
+  },
+] satisfies Link[]
+---
+
+<BaseLayout title="404 | Page not found">
+  <Hero
+    title="😬 Are you lost?"
+    content="Oops! The page you're looking for seems to have wandered off. Please try again or visit our homepage for more information."
+    links={links}
+  />
+</BaseLayout>

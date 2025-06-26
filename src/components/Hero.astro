@@ -1,0 +1,42 @@
+---
+import avatar from '@/assets/images/avatar-kathirr007.png'
+import Heading from '@/components/ui/Heading.astro'
+import type { LinkProps } from '@/components/ui/Link.astro'
+import Link from '@/components/ui/Link.astro'
+
+export interface Link extends LinkProps {
+  name: string
+}
+
+type Props = {
+  title?: string
+  content?: string
+  links?: Link[]
+}
+
+const defaultContent = {
+  title: "👋 Hi, I'm Kathiravan K",
+  content: "I'm a self-taught designer and developer obsessed with quality.",
+  links: [
+    { href: '/Kathiravan+K+Resume_UI_Updated.pdf', name: 'Download CV', variant: 'secondary' },
+    { href: '#connect', name: "Let's connect" },
+  ],
+}
+
+const { title = defaultContent.title, content = defaultContent.content, links = defaultContent.links } = Astro.props
+---
+
+<section aria-label="Hero Section" class="hero">
+  <img src={avatar.src} alt="Kathiravan K" />
+  <Heading tagName="h1" tagSize="h1">{title}</Heading>
+  <p>{content}</p>
+  <div class="columns">
+    {
+      links.map((l) => (
+        <Link href={l.href} variant={l.variant}>
+          {l.name}
+        </Link>
+      ))
+    }
+  </div>
+</section>

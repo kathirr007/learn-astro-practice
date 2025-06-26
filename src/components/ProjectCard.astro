@@ -1,0 +1,25 @@
+---
+import Heading from '@/components/ui/Heading.astro'
+import Link from '@/components/ui/Link.astro'
+import type { CollectionEntry } from 'astro:content'
+
+type Props = {
+  project: CollectionEntry<'projects'>
+}
+
+const { project } = Astro.props
+
+const { title, image, href } = project.data
+---
+
+<article aria-label={title} class="project-card">
+  <img src={image.src} height="300" width="250" alt="" />
+  <div class="rows">
+    <Heading tagName="h2" tagSize="h3">
+      {title}
+    </Heading>
+    <Link href={href} variant="secondary">
+      {'View Project'}
+    </Link>
+  </div>
+</article>

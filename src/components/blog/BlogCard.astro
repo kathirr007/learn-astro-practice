@@ -1,0 +1,40 @@
+---
+import FormattedDate from '@/components/ui/FormattedDate.astro'
+import Heading from '@/components/ui/Heading.astro'
+import Link from '@/components/ui/Link.astro'
+import type { CollectionEntry } from 'astro:content'
+import { getEntry } from 'astro:content'
+
+type Props = {
+  post: CollectionEntry<'blog'>
+}
+
+const { post } = Astro.props
+
+const { title, image, description, isDraft, pubDate, slug } = post.data
+
+const author: any = post.data.author
+  ? await getEntry(post.data.author.collection as keyof import("astro:content").DataEntryMap, post.data.author.id)
+  : undefined;
+---
+
+<article aria-label={title} class="blog-card">
+  <img src={image.src} height="300" width="250" alt="" />
+  <div class="rows">
+    <Heading tagName="h2" tagSize="h3">
+      {title}
+    </Heading>
+    <div class="columns">
+      <!-- date -->
+      <FormattedDate date={pubDate} />
+      <!-- author -->
+      {author && <small> by {(author as any)?.data?.name}</small>}
+    </div>
+    <p>
+      {description}
+    </p>
+    <Link href={`/blog/${slug}`}>
+      {'Read Post'}
+    </Link>
+  </div>
+</article>

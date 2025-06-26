@@ -8,7 +8,10 @@
       "@/*": [
         "./src/*"
       ],
-      "@/ui/*": ["src/components/ui/*"]
+      "@/ui/*": ["src/components/ui/*"],
+      "@root/*": [
+        "./*"
+      ]
     }
   },
   "include": [

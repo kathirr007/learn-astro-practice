@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+export interface LinkProps extends HTMLAttributes<'a'> {
+  href: string
+  variant?: 'primary' | 'secondary' | 'icon' | 'ghost'
+}
+
+const { href, variant = 'primary', ...rest } = Astro.props
+---
+
+<a href={href} {...rest} class:list={[rest.class, 'link', variant]}>
+  <slot />
+</a>
+
+<style></style>

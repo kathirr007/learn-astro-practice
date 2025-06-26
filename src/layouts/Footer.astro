@@ -1,0 +1,11 @@
+<footer>
+  <p>
+    &copy; <span id="copyright">{new Date().getFullYear()}</span> Kathirr007. All rights reserved. I'm a skilled web developer
+    passionate about creating innovative and user-friendly websites.
+  </p>
+</footer>
+
+<script>
+  const copyrightSpan = document.getElementById('copyright') as unknown as HTMLSpanElement
+  copyrightSpan.textContent = new Date().getFullYear().toString()
+</script>

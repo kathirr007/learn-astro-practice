@@ -3,6 +3,10 @@
   "prettier.enable": false,
   "editor.formatOnSave": false,
 
+  // Auto import uses alias in jsconfig/tsconfig instead of relative path
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
   // Auto fix
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",

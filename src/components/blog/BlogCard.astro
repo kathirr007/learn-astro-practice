@@ -13,7 +13,7 @@ const { post } = Astro.props
 
 const { title, image, description, isDraft, pubDate, slug } = post.data
 
-const author: any = post.data.author
+const author:Record<string, any> | undefined = post.data.author
   ? await getEntry(post.data.author.collection as keyof import("astro:content").DataEntryMap, post.data.author.id)
   : undefined;
 ---
@@ -28,7 +28,7 @@ const author: any = post.data.author
       <!-- date -->
       <FormattedDate date={pubDate} />
       <!-- author -->
-      {author && <small> by {(author as any)?.data?.name}</small>}
+      {author && <small> by {author?.data?.name}</small>}
     </div>
     <p>
       {description}

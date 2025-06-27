@@ -1,5 +1,6 @@
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
 import vercel from '@astrojs/vercel'
 import vue from '@astrojs/vue'
 import { PrimeVueResolver } from '@primevue/auto-import-resolver'
@@ -11,8 +12,6 @@ import {
   PrimeVueResolver as PrimeVueComponentResolver,
 } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-
-import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({

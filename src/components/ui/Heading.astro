@@ -15,12 +15,12 @@ interface Props extends HTMLAttributes<'h1'> {
   tagSize: keyof typeof headingOptions
 }
 
-const { tagName: Tag, tagSize, ...rest } = Astro.props
+const { tagName: TagName, tagSize, ...rest } = Astro.props
 ---
 
-<Tag {...rest} class:list={['default', headingOptions[tagSize]]}>
+<TagName {...rest} class:list={['default', headingOptions[tagSize]]}>
   <slot />
-</Tag>
+</TagName>
 
 <style>
   .default {

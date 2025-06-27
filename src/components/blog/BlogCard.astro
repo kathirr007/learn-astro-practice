@@ -7,21 +7,22 @@ import { getEntry } from 'astro:content'
 
 type Props = {
   post: CollectionEntry<'blog'>
+  headingTagName?: 'h2' | 'h3'
 }
 
-const { post } = Astro.props
+const { post, headingTagName = 'h2' } = Astro.props
 
 const { title, image, description, isDraft, pubDate, slug } = post.data
 
-const author:Record<string, any> | undefined = post.data.author
-  ? await getEntry(post.data.author.collection as keyof import("astro:content").DataEntryMap, post.data.author.id)
-  : undefined;
+const author: Record<string, any> | undefined = post.data.author
+  ? await getEntry(post.data.author.collection as keyof import('astro:content').DataEntryMap, post.data.author.id)
+  : undefined
 ---
 
 <article aria-label={title} class="blog-card">
   <img src={image.src} height="300" width="250" alt="" />
   <div class="rows">
-    <Heading tagName="h2" tagSize="h3">
+    <Heading tagName={headingTagName} tagSize="h3">
       {title}
     </Heading>
     <div class="columns">

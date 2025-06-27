@@ -12,6 +12,8 @@ import {
 } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [AutoImport({
@@ -28,7 +30,7 @@ export default defineConfig({
   }), react({
     experimentalReactChildren: true,
     include: ['**/react/*'],
-  }), mdx()],
+  }), mdx(), sitemap()],
 
   vite: {
     plugins: [

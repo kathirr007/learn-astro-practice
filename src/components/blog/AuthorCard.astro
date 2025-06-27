@@ -1,0 +1,20 @@
+---
+// components
+import Heading from '@/ui/Heading.astro'
+import Link from '@/ui/Link.astro'
+
+// assets
+import author from '@/assets/images/avatar-kathirr007.png'
+---
+
+<section aria-label="Connect with Kathirr007" class="blog-bio container">
+  <img src={author.src} alt="Kathiravan K" />
+  <div>
+    <Heading tagName="h2" tagSize="h2">👋 Hey, I'm Kathiravan K</Heading>
+    <p>
+      I like to write about productivity, web development, design, and working with clients. Get a sense of what it's
+      like to work with me and understand my process.
+    </p>
+    <Link href="/#connect">Let's Connect</Link>
+  </div>
+</section>

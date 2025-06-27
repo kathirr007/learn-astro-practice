@@ -5,9 +5,10 @@ import type { CollectionEntry } from 'astro:content'
 
 type Props = {
   project: CollectionEntry<'projects'>
+  headingTagName?: 'h2' | 'h3'
 }
 
-const { project } = Astro.props
+const { project, headingTagName = 'h2' } = Astro.props
 
 const { title, image, href } = project.data
 ---
@@ -15,7 +16,7 @@ const { title, image, href } = project.data
 <article aria-label={title} class="project-card">
   <img src={image.src} height="300" width="250" alt="" />
   <div class="rows">
-    <Heading tagName="h2" tagSize="h3">
+    <Heading tagName={headingTagName} tagSize="h3">
       {title}
     </Heading>
     <Link href={href} variant="secondary">

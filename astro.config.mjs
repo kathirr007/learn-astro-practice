@@ -15,6 +15,7 @@ import Components from 'unplugin-vue-components/vite'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://astro-portfolio-app.vercel.app/',
   integrations: [AutoImport({
     resolvers: [PrimeVueResolver()],
   }), vue({

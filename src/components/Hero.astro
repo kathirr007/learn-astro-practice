@@ -28,7 +28,7 @@ const { title = defaultContent.title, content = defaultContent.content, links = 
 
 <section aria-label="Hero Section" class="hero">
   <img src={avatar.src} alt="Kathiravan K" />
-  <Heading tagName="h1" tagSize="h1">{title}</Heading>
+  <Heading class:list={['text-center']} tagName="h1" tagSize="h1">{title}</Heading>
   <p>{content}</p>
   <div class="columns">
     {
